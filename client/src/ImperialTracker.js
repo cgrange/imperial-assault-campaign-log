@@ -15,8 +15,10 @@ const agendaTarget = 'agenda-target';
 * setImperialTracker
 */
 function ImperialTracker(props) {
+	const imperialTracker = JSON.parse(JSON.stringify(props.state));
+
 	function handleAgendaRowChange(index, event) {
-		const ongoingAgendas = props.ongoingAgendas.slice();
+		const ongoingAgendas = imperialTracker.ongoingAgendas.slice();
 		const target = event.target;
 
 		if(target.className === agendaName) {
@@ -26,11 +28,22 @@ function ImperialTracker(props) {
 		} else {
 			alert('we got problems in the Imperial Tracker element');
 		}
-
-		props.setOngoingAgendas(ongoingAgendas);
+		imperialTracker.ongoingAgendas = ongoingAgendas
+		props.setState(imperialTracker);
 	}
 
-	const ongoingAgendaList = props.ongoingAgendas.map((item, idx) => {
+	function setXp(value) {
+		imperialTracker.xp = value;
+		props.setState(imperialTracker);
+	}
+
+	function setInfuence(value) {
+		imperialTracker.influence = value;
+		props.setState(imperialTracker);
+	}
+
+	console.log(imperialTracker);
+	const ongoingAgendaList = imperialTracker.ongoingAgendas.map((item, idx) => {
 		item.index = idx;
 		item.handleChange = handleAgendaRowChange;
 		return AgendaRow(item);
@@ -40,11 +53,11 @@ function ImperialTracker(props) {
 		rce('h1', {className: 'title'}, 'Empire'),
 		rce('div', {className: 'experience-tracker'},
 			rce('h4', {className: 'header'}, 'Experience (XP)'),
-			rce(Counter, {quantity: props.xp, setQuantity: props.setXp, step: 1, min: 0})
+			rce(Counter, {quantity: imperialTracker.xp, setQuantity: setXp, step: 1, min: 0})
 		),
 		rce('div', {className: 'influence-tracker'},
 			rce('h4', {className: 'header'}, 'Influence'),
-			rce(Counter, {quantity: props.influence, setQuantity: props.setInfluence, step: 1, min: 0})
+			rce(Counter, {quantity: imperialTracker.influence, setQuantity: setInfuence, step: 1, min: 0})
 		),
 		rce('div', {className: 'agenda-tracker'},
 			rce('h4', {className: 'header'}, 'Ongoing Agendas'),

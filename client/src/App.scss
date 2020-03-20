@@ -1,5 +1,14 @@
 .App {
+  display: flex;
   text-align: center;
+
+  #mission-log-wrapper {
+    flex-grow: 1.8;
+  }
+
+  // #imperial-tracker-wrapper {
+
+  // }
 }
 
 .App-logo {
