@@ -1,0 +1,28 @@
+.imperial-tracker {
+	display: flex;
+	flex-wrap: wrap;
+	width: 50%;
+
+	.title {
+		flex-basis: 100%;
+		padding-right: 15%;
+		text-align: right;
+	}
+
+	.experience-tracker,
+	.influence-tracker {
+		align-items: center;
+		display: flex;
+		flex-basis: 50%;
+		flex-direction: column;
+	}
+
+	.agenda-tracker {
+		flex-basis: 100%;
+
+		.agenda-list {
+			list-style-type: none;
+			padding-left: 0;
+		}
+	}
+}

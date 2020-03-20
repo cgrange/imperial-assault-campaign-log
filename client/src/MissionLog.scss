@@ -1,0 +1,41 @@
+@use './variables' as v;
+
+.mission-log {
+	.field-row {
+		background-color: darkslategray;
+		color: white;
+		display: flex;
+		font-size: .7rem;
+		justify-content: space-between;
+
+		#mission-label {
+			flex-grow: v.$type-and-name-flex-grow;
+			flex-shrink: v.$type-and-name-flex-shrink;
+		}
+
+		#threat-label {
+			flex-basis: v.$threat-level-flex-basis;
+		}
+
+		#rebel-upgrade-label {
+			flex-basis: v.$upgrade-box-flex-basis;
+		}
+
+		#imperial-upgrade-label {
+			flex-basis: v.$upgrade-box-flex-basis;
+		}
+	}
+
+	.mission-list {
+		list-style-type: none;
+		padding-left: 0;
+
+		li {
+			background-color: lightgrey;
+
+			&:nth-child(odd) {
+				background-color: grey;
+			}
+		}
+	}
+}

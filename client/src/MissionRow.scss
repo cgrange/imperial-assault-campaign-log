@@ -1,0 +1,73 @@
+@use 'variables' as v;
+
+* {
+	box-sizing: border-box;
+}
+
+.mission-row {
+	display: flex;
+
+	input {
+		text-align: center;
+	}
+
+	.threat-level {
+		background-color: darkslategrey;
+		border-bottom-right-radius: 10px;
+		color: white;
+		flex-basis: v.$threat-level-flex-basis;
+		padding-top: .2rem;
+	}
+
+	.upgrade-box {
+		padding: 0 1rem 0 .5rem;
+		display: flex;
+		flex-basis: v.$upgrade-box-flex-basis;
+
+		.steps-and-check {
+			background-color: white;
+			display: inline-block;
+			flex-grow: 2;
+			font-size: .8rem;
+			height: 100%;
+			padding: 0 1rem 0 .5rem;
+			position: relative;
+		}
+	}
+
+	.threat-level,
+	.upgrade-box {
+		margin-top: 1.2rem;
+		position: relative;
+
+		.checkbox-wrapper {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	.cool-corners {
+		border-radius: 10px 0 10px 0;
+	}
+
+	.mission-type,
+	.mission-name {
+		width: 100%;
+	}
+
+	.mission-type {
+		font-size: .75rem;
+	}
+
+	.mission-name {
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	.type-and-name-wrapper {
+		flex-grow: v.$type-and-name-flex-grow;
+		flex-shrink: v.$type-and-name-flex-shrink;
+	}
+}
