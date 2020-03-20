@@ -5,39 +5,30 @@ import './MissionLog.scss';
 const rce = React.createElement;
 
 /* props
-* missions
-* campaignName
-* finale
-* forcedMissions
-* setMissionLog
+* state
+*	missions
+*	campaignName
+*	finale
+*	forcedMissions
+* setState
 */
 function MissionLog(props) {
-	let missions = props.missions.slice();
-	let campaignName = props.campaignName;
-	let finale = Object.assign({}, props.finale);
-	let forcedMissions = props.forcedMissions.slice();
-
-	let missionLogClone = {
-		missions: missions,
-		campaignName: campaignName,
-		finale: finale,
-		forcedMissions: forcedMissions
-	}
+	const missionLog = Object.assign({}, props.state);
 
 	function handleMissionChange(idx, key, value) {
-		missions[idx][key] = value;
-		console.log(missionLogClone);
-		props.setMissionLog(missionLogClone);
+		missionLog.missions[idx][key] = value;
+		console.log(missionLog);
+		props.setState(missionLog);
 	}
 
-	const missionItems = missions.map((mission, index) => {
+	const missionItems = missionLog.missions.map((mission, index) => {
 		mission.index = index;
 		mission.handleChange = handleMissionChange;
 		return rce('li', {key: index}, rce(MissionRow, mission))
 	});
 
 	return rce('div', {className: 'mission-log'},
-		rce('h1', {className: 'campaign-title'}, props.campaignName, ' Campaign Log'),
+		rce('h1', {className: 'campaign-title'}, missionLog.campaignName, ' Campaign Log'),
 		rce('div', {className: 'field-row'}, 
 			rce('span', {id: 'mission-label'}, 'Mission'),
 			rce('span', {id: 'threat-label'}, 'Threat Level'),

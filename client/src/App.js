@@ -9,7 +9,9 @@ const rce = React.createElement;
 
 function App() {
   const [missionLog, setMissionLog] = useState({});
+  const missionLogProps = {state: missionLog, setState: setMissionLog};
   const [imperialTracker, setImperialTracker] = useState({});
+  const imperialTrackerProps = {state: imperialTracker, setState: setImperialTracker};
 
   useEffect(() => {
     fetch('http://localhost:9000/testApi')
@@ -21,11 +23,9 @@ function App() {
     });
   }, []);
 
-  missionLog.setMissionLog = setMissionLog;
-  imperialTracker.setImperialTracker = setImperialTracker;
   return missionLog.missions ? rce('div', {className: 'App'},
-    rce(MissionLog, missionLog),
-    //rce(ImperialTracker, imperialTracker),
+    rce(MissionLog, missionLogProps),
+    //rce(ImperialTracker, imperialTrackerProps),
   ) : rce('span', null, 'Loading...');
 }
 

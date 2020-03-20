@@ -10,11 +10,9 @@ const agendaTarget = 'agenda-target';
 
 /* props
 * xp
-* setXp
 * influence
-* setInfluence
 * ongoingAgendas
-* setOngoingAgendas
+* setImperialTracker
 */
 function ImperialTracker(props) {
 	function handleAgendaRowChange(index, event) {
