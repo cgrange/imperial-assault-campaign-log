@@ -1,0 +1,39 @@
+.rebel-tracker {
+	.title {
+		background-color: firebrick;
+		color: white;
+		text-align: right;
+		margin-bottom: 0;
+		padding-right: 15%;
+	}
+
+	.credits-tracker {
+		align-items: center;
+		display: flex;
+		justify-content: space-around;
+		padding-top: .7rem;
+
+		.credits-header {
+			margin: .7rem 0;
+		}
+	}
+
+	.rebels-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		list-style-type: none;
+		margin-top: 0;
+		padding-left: 0;
+
+		li {
+			flex-basis: 50%;
+
+			.character-tracker {
+				align-items:center;
+				display: flex;
+				flex-flow: column;
+			}
+		}
+	}
+}
