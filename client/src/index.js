@@ -4,9 +4,6 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-
-const axios = require('axios');
-
 // axios.get('http://localhost:8080')
 // 	.then(response => {
 // 		console.log(response);

@@ -3,12 +3,16 @@
   text-align: center;
 
   #mission-log-wrapper {
-    flex-grow: 1.8;
+    flex-grow: 2;
+    margin-left: 1rem;
   }
 
-  // #imperial-tracker-wrapper {
-
-  // }
+  #trackers {
+    display: flex;
+    flex-basis: 35%;
+    flex-direction: column;
+    margin: 0 1.5rem;
+  }
 }
 
 .App-logo {

@@ -3,7 +3,10 @@
 	flex-wrap: wrap;
 
 	.title {
+		background-color: black;
+		color: white;
 		flex-basis: 100%;
+		margin-bottom: 0;
 		padding-right: 15%;
 		text-align: right;
 	}
@@ -19,9 +22,25 @@
 	.agenda-tracker {
 		flex-basis: 100%;
 
+		.header {
+			text-align: left;
+			margin-bottom: .7rem;
+		}
+
+		.agenda-label {
+			display: inline-block;
+			text-align: left;
+			width: 50%;
+		}
+
 		.agenda-list {
 			list-style-type: none;
+			margin-top: .25rem;
 			padding-left: 0;
+
+			.agenda-name, .agenda-target {
+				width: 50%;
+			}
 		}
 	}
 }

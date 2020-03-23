@@ -1,6 +1,13 @@
 @use './variables' as v;
 
 .mission-log {
+	.campaign-title {
+		background-color: darkslategray;
+		color: white;
+		line-height: 2;
+		margin-bottom: .7rem;
+	}
+
 	.field-row {
 		background-color: darkslategray;
 		color: white;

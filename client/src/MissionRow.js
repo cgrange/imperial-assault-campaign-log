@@ -9,7 +9,7 @@ const rce = React.createElement;
 *	type,
 *	name,
 *	threatLevel,
-*	missionAccomplished,
+*	accomplished,
 *	itemTiers,
 *	index,
 *	handleChange,
@@ -22,7 +22,7 @@ function MissionRow(props) {
 	}
 
 	function setMissionAccomplished(missionAccomplished) {
-		props.handleChange(props.index, 'missionAccomplished', missionAccomplished);
+		props.handleChange(props.index, 'accomplished', missionAccomplished);
 	}
 
 	// TODO if the inline upgrade change works consider doing the other ones inline as well
@@ -46,7 +46,7 @@ function MissionRow(props) {
 		rce('span', {className: 'threat-level'}, 
 			props.threatLevel,
 			rce('div', {className: 'checkbox-wrapper'},
-				rce(Checkbox, {checked: props.missionAccomplished, setChecked: setMissionAccomplished}),
+				rce(Checkbox, {checked: props.accomplished, setChecked: setMissionAccomplished}),
 			)
 		),
 		rce(UpgradeBox, 

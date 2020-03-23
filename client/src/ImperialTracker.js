@@ -42,7 +42,6 @@ function ImperialTracker(props) {
 		props.setState(imperialTracker);
 	}
 
-	console.log(imperialTracker);
 	const ongoingAgendaList = imperialTracker.ongoingAgendas.map((item, idx) => {
 		item.index = idx;
 		item.handleChange = handleAgendaRowChange;
