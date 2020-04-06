@@ -12,9 +12,10 @@ const testApiRouter = require('./routes/testApi');
 const testDBRouter = require('./routes/testDB');
 require('dotenv/config');
 
-var app = express();
+const app = express();
 
 const client = new MongoClient(process.env.MONGODB_CONNECTION, {useUnifiedTopology: true});
+
 async function run() {
   try {
     await client.connect();
