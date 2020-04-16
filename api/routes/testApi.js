@@ -90,13 +90,13 @@ const mockData = {
 		finale: {
 			name: 'Our Last Hope',
 			threatLevel: 3,
-			missionAccomplished: false
+			accomplished: false
 		},
 		forcedMissions: [
 			{
 				name: "No Rest for the Wicked",
 				threatLevel: 3,
-				missionAccomplished: true
+				accomplished: true
 			},
 		]
 	},
