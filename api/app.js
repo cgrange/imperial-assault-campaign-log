@@ -17,7 +17,11 @@ const config = require('./config');
 const app = express();
 
 mongoFacade.createCampaignLogCollection(config.dbName, config.collectionName)
-  .then(console.log);
+  .then(console.log)
+  .catch(err => {
+    console.log("o poop coldn't create the campaign log collection");
+    console.log(err);
+  })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

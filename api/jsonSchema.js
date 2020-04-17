@@ -35,7 +35,7 @@ exports.campaignLogSchema = {
                                 description: "must be an integer >= 1 and is required"
                             },
                             accomplished: {
-                                bsonType: "boolean",
+                                bsonType: "bool",
                                 description: "must be a boolean if the field exists"
                             },
                             itemTiers: {
@@ -48,11 +48,11 @@ exports.campaignLogSchema = {
                                 }
                             },
                             rebelUpgradeComplete: {
-                                bsonType: "boolean",
+                                bsonType: "bool",
                                 description: "must be a boolean if the field exists"
                             },
                             imperialUpgradeComplete: {
-                                bsonType: "boolean",
+                                bsonType: "bool",
                                 description: "must be a boolean if the field exists"
                             }
                         }
@@ -72,7 +72,7 @@ exports.campaignLogSchema = {
                             description: "must be an integer and is required"
                         },
                         accomplished: {
-                            bsonType: "boolean",
+                            bsonType: "bool",
                             description: "must be a boolean if the field exists"
                         }
                     }
@@ -93,7 +93,7 @@ exports.campaignLogSchema = {
                                 description: "must be an integer >= 1 and is required",
                             },
                             accomplished: {
-                                bsonType: "boolean",
+                                bsonType: "bool",
                                 description: "must be a boolean if the field exists"
                             }
                         }
