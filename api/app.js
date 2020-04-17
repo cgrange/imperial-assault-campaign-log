@@ -11,7 +11,13 @@ var usersRouter = require('./routes/users');
 const testApiRouter = require('./routes/testApi');
 const updateCampaignLogRouter = require('./routes/updateCampaignLog');
 
+const mongoFacade = require('./mongoFacade');
+const config = require('./config');
+
 const app = express();
+
+mongoFacade.createCampaignLogCollection(config.dbName, config.collectionName)
+  .then(console.log);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

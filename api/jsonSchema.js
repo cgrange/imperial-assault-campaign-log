@@ -1,7 +1,11 @@
-export const campaignLogSchema = {
+exports.campaignLogSchema = {
     bsonType: "object",
-    required: ["missionLog", "imperialTracker", "rebelTracker"],
+    required: ["squadName", "missionLog", "imperialTracker", "rebelTracker"],
     properties: {
+        squadName: {
+            bsonType: "string",
+            description: "the name of the squad, must be unique for each campaign log, and is required"
+        },
         missionLog: {
             bsonType: "object",
             required: ["campaignName", "missions", "finale"],
